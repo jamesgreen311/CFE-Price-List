@@ -1,37 +1,35 @@
 const templateSlideDeckId = "118eqgpPvbCnGMk_gktMQNtAwhFS4mJ-bezEA0hSrw8Y";
-const templateSlideId = "ga75653d3a7_0_0";
+const templateSlideId = "ga75653d3a7_0_0"; // Can't count on this not changing
 const presentationSlideId = "p";
-const slideDeck = connect();
+
+const slideDeck = connect("slide");
 const templateSlide = slideDeck.getSlideById(templateSlideId);
 const pSlide = slideDeck.getSlideById(presentationSlideId);
-const testSlideId = "ga75653d3a7_0_32";
+
+// for testing
+/* const testSlideId = "ga75653d3a7_0_32";
 const testSlide = slideDeck.getSlideById(testSlideId);
-let imageId = "1ZNxk26QF9EU8f-Qr8RE9giI-Q9mFa2_8";
 const testImageAsBlob = DriveApp.getFileById(imageId).getBlob();
+let imageId = "1ZNxk26QF9EU8f-Qr8RE9giI-Q9mFa2_8";  */
 
 function init() {
-    // SlidesApp.getActivePresentation();
-    let artistNameId = "ga75653d3a7_0_39";
-    let [artist, title, medium, size, price, image] = testSlide.getPageElements();
 
-    
-    //console.log(title.asShape().getText(), subtitle.asShape().getText());
-    
-    artist.asShape().getText().setText("James Green");
-    title.asShape().getText().setText("Down the Dark Ravine");
-    medium.asShape().getText().setText("Oil & Cold Wax");
-    size.asShape().getText().setText(`20" x 20"`);
-    price.asShape().getText().setText(`$800`);
-    image.asImage().replace(testImageAsBlob);
-    //box.asShape().getText().setText(image.asImage().getSourceUrl());
 }
 
-function connect(id) {
+function connect(app, fileid) {
     let conn;
-    if (id) {
-        conn = SlidesApp.openById(id);
-    } else {
-        conn = SlidesApp.getActivePresentation();
+    if (app === "slide") {
+        if (fileid) {
+            conn = SlidesApp.openById(fileid);
+        } else {
+            conn = SlidesApp.getActivePresentation();
+        }
+    } else if (app === "spreadsheet") {
+        if (fileid) {
+            conn = SpreadsheetApp.openById(fileid);
+        } else {
+            conn = SpreadsheetApp.getActiveSpreadsheet();
+        }
     }
     return conn;
 }

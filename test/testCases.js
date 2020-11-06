@@ -9,3 +9,8 @@ function testCopySlideDeck() {
     let newSlideDeckId = newSlideDeck.getId();
     console.log(newSlideDeckId);
 }
+
+function testGetExhibitData() {
+    let exhibitEntries = getExhibitEntriesById("54EC916");
+    console.log(exhibitEntries);
+}
