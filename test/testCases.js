@@ -11,6 +11,6 @@ function testCopySlideDeck() {
 }
 
 function testGetExhibitData() {
-    let exhibitEntries = getExhibitEntriesById("54EC916");
+    let exhibitEntries = getExhibitEntriesById("D3D66B");
     console.log(exhibitEntries);
 }

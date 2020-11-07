@@ -1,13 +1,13 @@
-const targetSlideDeck = copyTemplateSlideDeck(templateSlideDeckId);
+//const targetSlideDeck = copyTemplateSlideDeck(templateSlideDeckId);
 
 function getSlideDeckById(id) {
     let slideDeck = DriveApp.getFileById(id);
     return slideDeck;
 }
 
-function copyTemplateSlideDeck(templateDeckId) {
+function copyTemplateSlideDeck(templateDeckId, name) {
     let sourceSlideDeck = DriveApp.getFileById(templateDeckId);
-    return sourceSlideDeck.makeCopy("Crossroads Annual Show Test 2");
+    return sourceSlideDeck.makeCopy(name);
 }
 
 function copySlide(slideId) {

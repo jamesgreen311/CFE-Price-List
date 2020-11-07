@@ -1,10 +1,5 @@
-const templateSlideDeckId = "118eqgpPvbCnGMk_gktMQNtAwhFS4mJ-bezEA0hSrw8Y";
-const templateSlideId = "ga75653d3a7_0_0"; // Can't count on this not changing
-const presentationSlideId = "p";
 
-const slideDeck = connect("slide");
-const templateSlide = slideDeck.getSlideById(templateSlideId);
-const pSlide = slideDeck.getSlideById(presentationSlideId);
+//const pSlide = slideDeck.getSlideById(presentationSlideId);
 
 // for testing
 /* const testSlideId = "ga75653d3a7_0_32";
