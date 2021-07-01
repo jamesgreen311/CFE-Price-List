@@ -1,11 +1,14 @@
-// get show data from spreadsheet
-// copy template slide deck to new file name from show data
-// for each entry in show data
-//  copy artist info and image slide
-//  update title slide with show name
-//  update artist info and image slide with show data
-//  remove artist info slide template from deck
+
+/**
+ * Create price list slide deck from template
+ * for each entry in show data
+ * ..copy artist info and image slide
+ * ..update title slide with show name
+ * ..update artist info and image slide with show data
+ * ..remove artist info slide template from deck
+ */
 function process() {
+    /* Path to template My Drive/MRAA/Call For Entries/Price List Template */
     const templateSlideDeckId = "118eqgpPvbCnGMk_gktMQNtAwhFS4mJ-bezEA0hSrw8Y";
 
     const exhibitEntries = getExhibitEntriesById("D3D66B");
